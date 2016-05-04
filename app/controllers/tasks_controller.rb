@@ -3,8 +3,9 @@ class TasksController < ApplicationController
 
   # GET /tasks
   # GET /tasks.json
+  expose(:task)
+  expose(:tasks)
   def index
-    #@tasks = Task.all
   end
 
   def tasks
@@ -19,8 +20,17 @@ class TasksController < ApplicationController
 
   # GET /tasks/new
   def new
-    @task = Task.new
+    self.task = Task.new
   end
+
+  def task=obj
+    @task = obj
+  end
+
+  def task
+    @task ||= tasks.find(params[:id])
+  end
+  helper_method :task
 
   # GET /tasks/1/edit
   def edit

@@ -1,12 +1,15 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  expose(:user)
+  expose(:users)
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
   end
-
+  def users
+    User.all
+  end
+  helper_method :users
   # GET /users/1
   # GET /users/1.json
   def show
@@ -14,7 +17,16 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    @user = User.new
+    self.user = User.new
+  end
+
+  def user
+    @user ||= users.find(params[:id])
+  end
+  helper_method :user
+
+  def user=obj
+    @user = obj
   end
 
   # GET /users/1/edit
@@ -53,6 +65,7 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   # DELETE /users/1.json
+
   def destroy
     @user.destroy
     respond_to do |format|
