@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  task_id: 1
+  task_name: MyString
+  task_description: MyString
+  task_due_date: 2016-05-03 19:00:36
+  task_date_completed: 2016-05-03 19:00:36
+  task_status: 1
+  task_user: 1
+
+two:
+  task_id: 1
+  task_name: MyString
+  task_description: MyString
+  task_due_date: 2016-05-03 19:00:36
+  task_date_completed: 2016-05-03 19:00:36
+  task_status: 1
+  task_user: 1
