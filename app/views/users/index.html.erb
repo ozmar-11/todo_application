@@ -2,6 +2,11 @@
 
 <h1>Listing Users</h1>
 
+<%= form_for search_form, as: :search, url: users_path, method: :get do |form| %>
+  <%= form.text_field :user_name %>
+  <%= form.submit 'Buscar' %>
+  <% end %>
+
 <table>
   <thead>
     <tr>

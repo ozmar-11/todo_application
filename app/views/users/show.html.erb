@@ -2,13 +2,13 @@
 
 <p>
   <strong>User:</strong>
-  <%= @user.user_id %>
+  <%= user_form.user.user_id %>
 </p>
 
 <p>
   <strong>User name:</strong>
-  <%= @user.user_name %>
+  <%= user_form.user.user_name %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Edit', edit_user_path(user) %> |
 <%= link_to 'Back', users_path %>
